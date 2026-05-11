@@ -22,6 +22,7 @@ This skill **composes with** `cre8-a2ui`, which knows how to express UIs as cre8
 - "Make a FastMCP tool that returns a cre8 dashboard"
 - "Expose `@tmorrow/cre8-wc` components through MCP"
 - "Add a postMessage callback to this cre8 form"
+- "Show a chart / graph / data visualization in an MCP tool"
 
 If the request involves both a Python MCP server (FastMCP, `mcp-ui-server`, `ui://`) and cre8-wc / CRE8 / Innovexa components, this is the skill — even if the user didn't name it.
 
@@ -36,6 +37,7 @@ If the request involves both a Python MCP server (FastMCP, `mcp-ui-server`, `ui:
 | A cre8-a2ui JSON schema | Path A — `from_schema(schema, uri=...)` |
 | Plain HTML / a description in words | Path B — invoke the `cre8-a2ui` skill to produce a schema first, then Path A |
 | Just an HTML body fragment | Path C — `from_html(html_body, uri=...)` |
+| A chart / graph / data visualization | Path D — `from_html` with inline `<script>` to set `.data` on `cre8-chart`. See `references/chart-patterns.md`. |
 
 **Always prefer Path A** when generating fresh UIs. The schema is the contract; the HTML is the artifact. This means a future change can re-render the same schema with different themes or breakpoints without re-running the agent.
 
@@ -68,6 +70,8 @@ If the UI needs to call back to MCP, declare events in the schema. Do **not** wr
 ```
 
 For forms, wrap the form in `cre8-form` (or any element with `data-cre8-form-scope`). All `[name]` fields under that scope are collected automatically when the submit button fires.
+
+**Exception — `cre8-chart`:** chart data must be set via JS properties. Use `from_html` with an inline script instead of schema. See `references/chart-patterns.md`.
 
 ### 4. Return the resource
 
@@ -170,6 +174,8 @@ For a multi-tool server with shared theming, define the CSS once at module level
 | `print()` from inside a tool breaks the server           | Stdio transport reads stdout — never print. Use `logging` to stderr instead.                             |
 | Single `UIResource` returned, not a list                 | FastMCP expects `list[UIResource]`. Wrap in `[ ]`.                                                       |
 | User sees raw HTML instead of a rendered UI              | Host doesn't recognize `ui://` resources. Check `Supported Hosts` in the mcp-ui docs. (The Python SDK currently emits `mimeType: text/html`; some hosts also look for the `text/html;profile=mcp-app` profile from the MCP Apps spec.) |
+| `cre8-chart` renders empty / data not showing            | `cre8-chart` takes `data`/`options` as JS **properties**, not attributes. Always use `from_html` with an inline `<script>` that sets `el.data = {...}` inside `customElements.whenDefined('cre8-chart').then(init)`. Never use `from_schema` for charts. |
+| `data-click` fires but MCP tool is never called          | The auto-wire bridge doesn't capture `CustomEvent.detail`. Add a manual `el.addEventListener('data-click', ...)` in your inline script and call `cre8Bridge.callTool(toolName, { label, value, ... })` directly. |
 
 ---
 
@@ -181,6 +187,7 @@ Load these on demand:
 - `references/fastmcp-patterns.md` — FastMCP tool patterns, `_meta.ui` linking, encoding tradeoffs, transports. Read when scaffolding a new server or troubleshooting tool registration.
 - `references/examples/display_only.py` — minimal static dashboard. Use as a starting template.
 - `references/examples/interactive_form.py` — full postMessage round-trip with form scope and a callback tool. Use as a starting template when the UI needs to write back.
+- `references/chart-patterns.md` — `cre8-chart` API, JS property pattern, `data-click` wiring, chart types. Read whenever the user wants a chart, graph, or data visualization in an MCP UI.
 
 ---
 
