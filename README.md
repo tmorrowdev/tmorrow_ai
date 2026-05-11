@@ -7,6 +7,7 @@ Plugin marketplace for Claude Cowork and Claude Code.
 | Plugin | Description |
 |--------|-------------|
 | **[data](./data)** | Write SQL, explore datasets, and generate insights faster. Build visualizations and dashboards, and turn raw data into clear stories for stakeholders. |
+| **[cre8](https://github.com/tmorrowdev/cre8-plugin)** | Design system intelligence for the Cre8 / Innovexa component library. MCP tools for component lookup, code generation, and serving cre8-wc UIs through Python MCP servers. |
 
 ## Installation
 
@@ -22,4 +23,5 @@ claude plugin marketplace add tmorrowdev/tmorrow_ai
 
 # Install a plugin
 claude plugin install data@tmorrow_ai
+claude plugin install cre8@tmorrow_ai
 ```
