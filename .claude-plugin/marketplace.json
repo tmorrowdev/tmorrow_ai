@@ -1,18 +1,16 @@
 {
   "name": "tmorrow_ai",
-  "owner": {
-    "name": "Tyler Morrow"
-  },
+  "owner": { "name": "Tyler Morrow" },
   "plugins": [
     {
       "name": "data",
       "source": "./data",
-      "description": "Write SQL, explore datasets, and generate insights faster. Build visualizations and dashboards, and turn raw data into clear stories for stakeholders."
+      "description": "Write SQL, explore datasets, and build data pipelines with AI assistance."
     },
     {
       "name": "cre8",
-      "source": "tmorrowdev/cre8-plugin",
-      "description": "Design system intelligence for the Cre8 / Innovexa component library. Provides MCP tools for component lookup, code generation, and an mcp-ui bridge for serving cre8-wc UIs through Python MCP servers."
+      "source": "./cre8",
+      "description": "Design system intelligence for @tmorrow/cre8-wc and @tmorrow/cre8-react. Generates A2UI schemas, React components, and FastMCP UI servers using the Innovexa/CRE8 component library."
     }
   ]
 }
