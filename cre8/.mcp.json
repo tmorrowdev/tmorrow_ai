@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "cre8": {
+      "command": "npx",
+      "args": ["-y", "cre8-mcp"]
+    }
+  }
+}
