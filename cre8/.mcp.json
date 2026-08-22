@@ -2,7 +2,7 @@
   "mcpServers": {
     "cre8": {
       "command": "npx",
-      "args": ["-y", "cre8-mcp"]
+      "args": ["-y", "@tmorrow/cre8-mcp@latest"]
     }
   }
 }
