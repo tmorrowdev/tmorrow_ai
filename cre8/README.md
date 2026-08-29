@@ -19,6 +19,7 @@ The plugin registers the `cre8` MCP server with these tools:
 - **cre8-a2ui** - Web Components guidance (vanilla JS/HTML, Lit)
 - **cre8-a2ui-react** - React component guidance
 - **cre8-mcp-ui** - MCP UI bridge for serving cre8-wc UIs through Python MCP servers
+- **cre8-brand** - Extract a brand's colors, type and shape from a website, docs site, Design.md, or picture, and turn it into a cre8 seed-token override
 
 ## Installation
 
