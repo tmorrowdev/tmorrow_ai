@@ -59,14 +59,22 @@ naming: PascalCase (Cre8Button, Cre8Card, etc.)
 ## Required Setup
 
 ```bash
-npm install @tmorrow/cre8-react @cre8_dev/cre8-design-tokens
+npm install @tmorrow/cre8-react @tmorrow/cre8-wc
 ```
+
+Design tokens ship inside `@tmorrow/cre8-wc`, not a separate
+`@cre8_dev/cre8-design-tokens` package — that package stopped tracking the
+library after 1.0.10 and no longer matches the shipped token architecture.
 
 Add to app entry point:
 
 ```tsx
-import '@cre8_dev/cre8-design-tokens/lib/web/brands/cre8/css/tokens_cre8.css';
+import '@tmorrow/cre8-wc/design-tokens/brands/cre8/css/tokens_cre8.css';
 ```
+
+To use a brand other than `cre8`, swap the path segment
+(`brands/<brand>/css/tokens_<brand>.css`) — see the `cre8-brand` skill for
+how to identify or generate one.
 
 ## Component Categories
 

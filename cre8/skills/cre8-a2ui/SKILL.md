@@ -83,15 +83,21 @@ naming: kebab-case (cre8-button, cre8-card, etc.)
 
 Both the design tokens CSS and the web components script are required:
 
+Design tokens ship inside `@tmorrow/cre8-wc` itself now, not a separate
+`@cre8_dev/cre8-design-tokens` package — that package stopped tracking the
+library after 1.0.10 and no longer matches the shipped token architecture.
+
 ```html
 <!-- 1. Design Tokens (REQUIRED) - must load before components -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@cre8_dev/cre8-design-tokens@1.0.3/lib/web/brands/cre8/css/tokens_cre8.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@2.3.6/lib/design-tokens/brands/cre8/css/tokens_cre8.css"/>
 
 <!-- 2. CRE8 Web Components -->
-<script type="module" src="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@1.0.26/cdn/cre8-wc.esm.js"></script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@tmorrow/cre8-wc@2.3.6/cdn/cre8-wc.esm.js"></script>
 ```
 
-**Important**: The design tokens stylesheet provides all CSS custom properties (`--cre8-*`) that components depend on. Without it, components will render without proper styling.
+Confirm the current version before shipping this (`npm view @tmorrow/cre8-wc version`) rather than trusting the number above — it will drift the same way the old one did.
+
+**Important**: The design tokens stylesheet provides all CSS custom properties (`--cre8-*`) that components depend on. Without it, components will render without proper styling. To use a brand other than `cre8`, swap the path segment (`brands/<brand>/css/tokens_<brand>.css`) — see the `cre8-brand` skill for how to identify or generate one.
 
 ## Usage
 
