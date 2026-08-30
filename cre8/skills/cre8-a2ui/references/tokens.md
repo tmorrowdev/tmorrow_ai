@@ -44,7 +44,7 @@ sheets — every token a literal value, no seed indirection, by design (a
 brand that ships as a single self-contained file). Setting a seed variable
 on one of those changes nothing, silently, because nothing reads it. Check
 for `--cre8-seed-*` declarations in the brand's `tokens_brand.css` before
-assuming the seed override technique below applies. See the `cre8-brand`
+assuming the seed override technique below applies. See the `cre8-theming`
 skill for the full seed-extraction workflow.
 
 ### The seed tier, verified

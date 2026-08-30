@@ -97,7 +97,7 @@ library after 1.0.10 and no longer matches the shipped token architecture.
 
 Confirm the current version before shipping this (`npm view @tmorrow/cre8-wc version`) rather than trusting the number above — it will drift the same way the old one did.
 
-**Important**: The design tokens stylesheet provides all CSS custom properties (`--cre8-*`) that components depend on. Without it, components will render without proper styling. To use a brand other than `cre8`, swap the path segment (`brands/<brand>/css/tokens_<brand>.css`) — see the `cre8-brand` skill for how to identify or generate one.
+**Important**: The design tokens stylesheet provides all CSS custom properties (`--cre8-*`) that components depend on. Without it, components will render without proper styling. To use a brand other than `cre8`, swap the path segment (`brands/<brand>/css/tokens_<brand>.css`) — see the `cre8-theming` skill for how to identify or generate one.
 
 ## Usage
 

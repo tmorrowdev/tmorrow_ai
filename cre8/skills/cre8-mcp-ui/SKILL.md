@@ -1,11 +1,15 @@
 ---
 name: cre8-mcp-ui
-description: Bridge for serving CRE8 web components (@tmorrow/cre8-wc) as interactive UI through Python MCP servers via the mcp-ui-server SDK. Use whenever the user wants a Python FastMCP server whose tools return cre8-wc UIs, wraps an A2UI / cre8-a2ui schema as an mcp-ui rawHtml resource, exposes CRE8 / Innovexa design system components through MCP, builds interactive cre8-wc forms or dashboards that postMessage back to an MCP host, or mentions mcp-ui + cre8-wc, mcp-ui-server + FastMCP, ui:// resources with cre8 components, or "cre8 in mcp-ui." Compose this skill with cre8-a2ui (which generates the HTML body); this skill provides the page shell, the postMessage bridge, the Python helper, and the FastMCP tool patterns. Trigger eagerly — if the request involves both a Python MCP server and any CRE8 / cre8-wc UI, use this skill even when the user didn't say "mcp-ui" by name.
+description: Explanatory skill that teaches an agent how to combine CRE8 web components (@tmorrow/cre8-wc) with a Python FastMCP server to build an MCP Apps experience — an MCP tool call that returns live, interactive cre8-wc UI rendered in the host's iframe (via the mcp-ui-server SDK), not a text reply. Use whenever the user wants a FastMCP tool whose response is a cre8-wc UI: wrapping a cre8-a2ui schema as an mcp-ui rawHtml resource, building interactive cre8-wc forms or dashboards inside an iframe that postMessage back to the host, or any mention of mcp-ui + cre8-wc, mcp-ui-server + FastMCP, ui:// resources with cre8 components, "MCP Apps," or "cre8 in mcp-ui." Compose this skill with cre8-a2ui (which generates the HTML body); this skill provides the page shell, the postMessage bridge, the Python helper, and the FastMCP tool patterns. Trigger eagerly — if the request involves both a Python MCP server and any CRE8 / cre8-wc UI, use this skill even when the user didn't say "mcp-ui" by name.
 ---
 
 # cre8-mcp-ui — CRE8 ↔ mcp-ui bridge
 
-Serve `@tmorrow/cre8-wc` components as interactive UI through Python MCP tools. This skill provides three things the agent needs to build correctly:
+This is an explanatory skill: it teaches an agent how to wire `@tmorrow/cre8-wc`
+components into a Python FastMCP server so a tool call returns an **MCP Apps
+experience** — live, interactive UI rendered in the host's iframe, instead of
+a text reply the host has to interpret and re-render. It provides three
+things the agent needs to build one correctly:
 
 1. **A page shell** (`assets/page-shell.html`) — a self-contained HTML document that loads cre8-wc from CDN, applies brand theme tokens, and wires the mcp-ui postMessage bridge.
 2. **A Python helper** (`scripts/build_ui_resource.py`) — `from_schema(...)` and `from_html(...)` produce `UIResource` instances ready to return from FastMCP tools.
@@ -144,14 +148,14 @@ The shell HTML path is resolved relative to `build_ui_resource.py`, so as long a
 
 ## Theming with brand tokens
 
-Pass extracted brand CSS as `theme_css` — the shell injects it into a `<style>` block before user content. Compose with the `brand-theme-extractor` skill to generate the token override:
+Pass extracted brand CSS as `theme_css` — the shell injects it into a `<style>` block before user content. Compose with the `cre8-theming` skill to generate the token override:
 
 ```python
 theme_css = """
-:root {
-  --cre8-color-primary: #001d8e;
-  --cre8-color-accent: #03bbb9;
-  --cre8-font-family-body: 'SF Pro', system-ui, sans-serif;
+:root, [data-cre8-theme] {
+  --cre8-seed-primary: #001d8e;
+  --cre8-seed-accent: #03bbb9;
+  --cre8-seed-font: 'SF Pro', system-ui, sans-serif;
 }
 """
 

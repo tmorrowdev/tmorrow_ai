@@ -73,7 +73,7 @@ import '@tmorrow/cre8-wc/design-tokens/brands/cre8/css/tokens_cre8.css';
 ```
 
 To use a brand other than `cre8`, swap the path segment
-(`brands/<brand>/css/tokens_<brand>.css`) — see the `cre8-brand` skill for
+(`brands/<brand>/css/tokens_<brand>.css`) — see the `cre8-theming` skill for
 how to identify or generate one.
 
 ## Component Categories
