@@ -1,0 +1,20 @@
+{
+  "name": "tmorrow_ai",
+  "interface": {
+    "displayName": "Tyler Morrow"
+  },
+  "plugins": [
+    {
+      "name": "cre8",
+      "source": {
+        "source": "local",
+        "path": "./cre8"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
