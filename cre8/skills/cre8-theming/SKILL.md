@@ -11,17 +11,38 @@ handful of raw values everything else derives from.
 
 ## Start from `whitelabel` unless told otherwise
 
-`@tmorrow/cre8-wc` ships a `whitelabel` brand
-(`design-tokens/brands/whitelabel`) built for exactly this: a complete,
-fully seed-driven brand with deliberately unbranded defaults — a muted slate
-primary, the conventional green/red/amber status mapping, a system font
-stack, an 8px corner radius. Nothing in it reads as "someone's brand" before
-you reseed it, and nothing in it is a literal outside the seed block, so a
-full reseed genuinely covers everything. Use it as the base for a fresh
-build. Only target a different brand (`cre8-a2ui`, or one the user names)
-when the user is already committed to it — reseeding an existing brand's
-opinionated defaults still works, but you're overriding its look, not
+`@tmorrow/cre8-wc` ships a `whitelabel` brand built for exactly this: a
+complete, fully seed-driven brand with deliberately unbranded defaults — a
+muted slate primary, the conventional green/red/amber status mapping, a
+system font stack, an 8px corner radius. Nothing in it reads as "someone's
+brand" before you reseed it, and nothing in it is a literal outside the seed
+block, so a full reseed genuinely covers everything. Use it as the base for a
+fresh build. Only target a different brand (`cre8-a2ui`, or one the user
+names) when the user is already committed to it — reseeding an existing
+brand's opinionated defaults still works, but you're overriding its look, not
 starting from blank.
+
+Load it by package subpath — this is the import to hand the user:
+
+```css
+@import "@tmorrow/cre8-wc/themes/whitelabel";
+/* your seed override block goes after this */
+```
+
+`themes/<brand>` resolves to that brand's entry stylesheet, which pulls in
+the full token sheet and its fonts. The same shape works for any brand:
+`@tmorrow/cre8-wc/themes/cre8-a2ui`.
+
+**Do not conclude the brand is missing because you can't find it on disk.**
+In an installed package the tokens live under `lib/` and `dist/`, not at the
+package root — `node_modules/@tmorrow/cre8-wc/design-tokens/` does not
+exist, by design, and the `exports` map is what makes the subpath above
+work. (Inside this monorepo the source is at
+`packages/cre8-wc/design-tokens/brands/whitelabel/` — a repo path, not an
+import path.) If the subpath genuinely fails to resolve, say so and stop
+rather than silently falling back to a different base: check the installed
+version with `npm ls @tmorrow/cre8-wc`, since `whitelabel` ships in 2.3.10
+and later.
 
 ## Check this applies before starting
 
@@ -181,7 +202,8 @@ uniformly confident is worse than one that flags its two weakest guesses,
 because the weak guess is usually the one someone builds a whole palette
 correction around later.
 
-Tell the user to load the base brand's tokens first, then this block, at the
+Tell the user to load the base brand's tokens first
+(`@import "@tmorrow/cre8-wc/themes/whitelabel";`), then this block, at the
 page's entry point — same rule as any cre8 theming (see cre8-design's
 "Theming a page to a brand"). Then **verify visually**: render it and check
 the primary button, an info-status badge (the one element that actually

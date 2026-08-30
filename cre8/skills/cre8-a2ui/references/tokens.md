@@ -21,10 +21,17 @@ before citing one:
 
 ```bash
 grep -o -- '--cre8-[a-z0-9-]*button-primary[a-z0-9-]*:' \
-  node_modules/@tmorrow/cre8-wc/design-tokens/brands/<brand>/css/tokens_brand.css
+  node_modules/@tmorrow/cre8-wc/lib/design-tokens/brands/<brand>/css/tokens_brand.css
 ```
 
-or open the file directly. It's plain, readable CSS with prose comments
+Note the `lib/` — in an installed package the token sheets live under
+`lib/` (and `dist/`), never at the package root. The bare
+`@tmorrow/cre8-wc/design-tokens/...` form works as an *import specifier*
+(the `exports` map rewrites it) but not as a filesystem path, so a `grep`
+or `cat` without `lib/` returns "No such file" and reads as if the brand
+were missing.
+
+Or open the file directly. It's plain, readable CSS with prose comments
 explaining the tier it's in.
 
 ## The tier architecture
