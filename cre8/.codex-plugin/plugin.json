@@ -18,6 +18,11 @@
     "developerName": "Tyler Morrow",
     "category": "Productivity",
     "capabilities": ["Read", "Write"],
+    "defaultPrompt": [
+      "Build a settings page with the Cre8 components.",
+      "Theme this app to match our brand.",
+      "Show me the Cre8 component for a data table."
+    ],
     "websiteURL": "https://cre8solutions.llc",
     "brandColor": "#4F46E5"
   }
