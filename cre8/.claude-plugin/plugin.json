@@ -1,0 +1,16 @@
+{
+  "name": "cre8",
+  "version": "1.5.0",
+  "description": "CRE8 component intelligence, brand theming, and specialist agents orchestrating MCP Apps integration and rendering verification for Claude Desktop and ChatGPT.",
+  "author": {
+    "name": "Tyler Morrow"
+  },
+  "keywords": [
+    "design-system",
+    "components",
+    "react",
+    "web-components",
+    "lit",
+    "cre8"
+  ]
+}
