@@ -1,27 +1,39 @@
 {
   "name": "cre8",
   "version": "1.3.0",
-  "description": "Cre8 design system intelligence. Bundles the @tmorrow/cre8-mcp server (component lookup, A2UI catalog and validation, live streamed UI surfaces) plus skills for Web Components, React, MCP-UI, and brand theming.",
+  "description": "CRE8 component intelligence, brand theming, and specialist agents orchestrating MCP Apps integration and rendering verification for Claude Desktop and ChatGPT.",
   "author": {
     "name": "Tyler Morrow"
   },
   "homepage": "https://cre8solutions.llc",
   "repository": "https://github.com/tmorrowdev/tmorrow_ai",
   "license": "MIT",
-  "keywords": ["design-system", "components", "react", "web-components", "lit", "cre8", "generative-ui"],
+  "keywords": [
+    "design-system",
+    "components",
+    "react",
+    "web-components",
+    "lit",
+    "cre8",
+    "generative-ui"
+  ],
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Cre8",
     "shortDescription": "Generative UI toolkit for the Cre8/Innovexa design system",
-    "longDescription": "Component intelligence, A2UI schema authoring and validation, live streamed UI surfaces, and brand theming for @tmorrow/cre8-wc and @tmorrow/cre8-react — the same skills and MCP server available as a Claude Code plugin.",
+    "longDescription": "Shared CRE8 skills and MCP tools with a workflow coordinating brand extraction, MCP Apps integration, and per-host rendering debugging. Includes project-installable Codex specialist agents.",
     "developerName": "Tyler Morrow",
     "category": "Productivity",
-    "capabilities": ["Read", "Write"],
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
     "defaultPrompt": [
       "Build a settings page with the Cre8 components.",
       "Theme this app to match our brand.",
-      "Show me the Cre8 component for a data table."
+      "Show me the Cre8 component for a data table.",
+      "Use cre8-mcp-app-workflow to build a branded MCP App for Claude Desktop and ChatGPT."
     ],
     "websiteURL": "https://cre8solutions.llc",
     "brandColor": "#4F46E5"

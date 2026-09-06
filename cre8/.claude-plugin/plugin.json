@@ -1,9 +1,16 @@
 {
   "name": "cre8",
   "version": "1.3.0",
-  "description": "Cre8 design system intelligence for Claude Code. Bundles the @tmorrow/cre8-mcp server (component lookup, A2UI catalog and validation, live streamed UI surfaces) plus skills for Web Components, React, MCP-UI, and brand theming.",
+  "description": "CRE8 component intelligence, brand theming, and specialist agents orchestrating MCP Apps integration and rendering verification for Claude Desktop and ChatGPT.",
   "author": {
     "name": "Tyler Morrow"
   },
-  "keywords": ["design-system", "components", "react", "web-components", "lit", "cre8"]
+  "keywords": [
+    "design-system",
+    "components",
+    "react",
+    "web-components",
+    "lit",
+    "cre8"
+  ]
 }

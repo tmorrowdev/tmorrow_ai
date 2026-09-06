@@ -1,0 +1,15 @@
+{
+  "name": "cre8",
+  "version": "1.3.0",
+  "description": "CRE8 components, brand theming, and coordinated MCP Apps integration and rendering agents.",
+  "mcpServers": {
+    "cre8": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@tmorrow/cre8-mcp@latest"
+      ]
+    }
+  },
+  "contextFileName": "GEMINI.md"
+}

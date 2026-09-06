@@ -1,9 +1,21 @@
 ---
 name: cre8-mcp-ui
-description: Explanatory skill that teaches an agent how to combine CRE8 web components (@tmorrow/cre8-wc) with a Python FastMCP server to build an MCP Apps experience — an MCP tool call that returns live, interactive cre8-wc UI rendered in the host's iframe (via the mcp-ui-server SDK), not a text reply. Use whenever the user wants a FastMCP tool whose response is a cre8-wc UI — wrapping a cre8-a2ui schema as an mcp-ui rawHtml resource, building interactive cre8-wc forms or dashboards inside an iframe that postMessage back to the host, or any mention of mcp-ui + cre8-wc, mcp-ui-server + FastMCP, ui:// resources with cre8 components, "MCP Apps," or "cre8 in mcp-ui." Compose this skill with cre8-a2ui (which generates the HTML body); this skill provides the page shell, the postMessage bridge, the Python helper, and the FastMCP tool patterns. Trigger eagerly — if the request involves both a Python MCP server and any CRE8 / cre8-wc UI, use this skill even when the user didn't say "mcp-ui" by name.
+description: Build CRE8 embedded UIs for MCP Apps / ext-apps in Claude Desktop and ChatGPT, or legacy mcp-ui hosts. Use for Python FastMCP or TypeScript MCP servers exposing interactive CRE8 forms, dashboards, or charts. Composes with cre8-a2ui and cre8-theming; selects the correct host protocol before using helpers.
 ---
 
 # cre8-mcp-ui — CRE8 ↔ mcp-ui bridge
+
+## Choose the host protocol first
+
+For **MCP Apps / ext-apps, Claude Desktop, or ChatGPT**, read
+[references/ext-apps-integration.md](references/ext-apps-integration.md) and follow
+that path instead of the legacy bridge instructions below. For a complete branded
+integration, use the sibling `cre8-mcp-app-workflow` skill to coordinate theming,
+building, and rendering verification.
+
+The instructions, Python helper, and page shell below target **legacy mcp-ui**.
+Keep using them for hosts explicitly implementing that protocol. They do not
+establish compatibility with either desktop platform's MCP Apps runtime.
 
 This is an explanatory skill: it teaches an agent how to wire `@tmorrow/cre8-wc`
 components into a Python FastMCP server so a tool call returns an **MCP Apps
