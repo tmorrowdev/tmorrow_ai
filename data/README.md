@@ -4,9 +4,21 @@ A data analyst plugin primarily designed for [Cowork](https://claude.com/product
 
 ## Installation
 
+```bash
+claude plugin marketplace add tmorrowdev/tmorrow_ai
+claude plugin install data@tmorrow_ai
 ```
-claude plugins add knowledge-work-plugins/data
+
+For Cowork installation, see the [marketplace installation guide](../README.md#cowork). This plugin is currently packaged for Cowork and Claude Code only.
+
+## Upgrading
+
+```bash
+claude plugin marketplace update tmorrow_ai
+claude plugin update data@tmorrow_ai
 ```
+
+Restart Claude Code afterward. For Cowork updates and automatic update settings, see the [marketplace upgrade guide](../README.md#upgrading).
 
 ## What It Does
 

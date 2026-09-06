@@ -43,9 +43,38 @@ when the server changes) with 15 tools:
 
 ## Installation
 
+### Claude Code
+
 ```bash
+claude plugin marketplace add tmorrowdev/tmorrow_ai
 claude plugin install cre8@tmorrow_ai
 ```
+
+### Codex
+
+```bash
+codex plugin marketplace add tmorrowdev/tmorrow_ai
+codex plugin add cre8@tmorrow_ai
+```
+
+Start a new Codex thread after installing. Optional project agent registration is described below.
+
+### Gemini CLI
+
+From a terminal, clone the marketplace and install its extension subdirectory:
+
+```bash
+git clone https://github.com/tmorrowdev/tmorrow_ai.git
+gemini extensions install ./tmorrow_ai/cre8
+```
+
+Keep the checkout for future updates and start a new Gemini CLI session.
+
+For Cowork installation and upgrade instructions for every client, see the [marketplace guide](../README.md#installation).
+
+## Upgrading
+
+Follow the [client-specific upgrade instructions](../README.md#upgrading) to refresh the marketplace or checkout and update the installed plugin. Start a new session afterward. The Gemini development link below reads changes directly from its checkout.
 
 ## Requirements
 
