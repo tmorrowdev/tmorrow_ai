@@ -1,0 +1,42 @@
+{
+  "name": "cre8-data",
+  "version": "2.0.0",
+  "description": "Write SQL, explore datasets, and generate insights faster. Build visualizations and dashboards, and turn raw data into clear stories for stakeholders. Includes Clerk machine authentication for auth-gated data sources.",
+  "author": {
+    "name": "Tyler Morrow"
+  },
+  "homepage": "https://cre8-ui.dev",
+  "repository": "https://github.com/tmorrowdev/tmorrow_ai",
+  "license": "MIT",
+  "keywords": [
+    "data",
+    "sql",
+    "analytics",
+    "visualization",
+    "dashboards",
+    "snowflake",
+    "clerk",
+    "authentication"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Cre8 Data",
+    "shortDescription": "SQL, dataset exploration, visualization, and dashboards",
+    "longDescription": "Turns the agent into a data analyst: writes optimized SQL, profiles datasets, builds visualizations and interactive dashboards, and validates analyses before they reach stakeholders. Connects to Snowflake, Amplitude, and Jira, and covers Clerk machine authentication for reaching auth-gated data sources.",
+    "developerName": "Tyler Morrow",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Explore this dataset and tell me what stands out.",
+      "Write a query for monthly active users by plan.",
+      "Build an interactive dashboard from these results.",
+      "The agent gets a 401 from our API — set up Clerk machine auth."
+    ],
+    "websiteURL": "https://cre8-ui.dev",
+    "brandColor": "#4F46E5"
+  }
+}

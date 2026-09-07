@@ -1,6 +1,7 @@
 {
   "name": "tmorrow_ai",
   "owner": { "name": "Tyler Morrow" },
+  "description": "Design system intelligence and data analysis plugins for Claude Cowork, Claude Code, Codex, and Gemini CLI.",
   "plugins": [
     {
       "name": "cre8-data",

@@ -9,7 +9,31 @@ claude plugin marketplace add tmorrowdev/tmorrow_ai
 claude plugin install cre8-data@tmorrow_ai
 ```
 
-For Cowork installation, see the [marketplace installation guide](../README.md#cowork). This plugin is currently packaged for Cowork and Claude Code only.
+For Cowork installation, see the [marketplace installation guide](../README.md#cowork).
+
+### Codex
+
+The `.codex-plugin/plugin.json` manifest exposes the skills and MCP servers:
+
+```bash
+codex plugin marketplace add tmorrowdev/tmorrow_ai
+codex plugin add cre8-data@tmorrow_ai
+```
+
+Start a new Codex thread afterward to load them.
+
+### Gemini CLI
+
+This directory is its own extension root (`gemini-extension.json`), sharing the
+same skills and MCP servers, with `GEMINI.md` as context:
+
+```bash
+gemini extensions install ./tmorrow_ai/cre8-data
+```
+
+For development, `gemini extensions link .` from this directory reads changes
+without reinstalling. Commands are a Claude Code and Cowork feature; Codex and
+Gemini CLI load the skills and MCP servers.
 
 ## Upgrading
 
@@ -19,6 +43,19 @@ claude plugin update cre8-data@tmorrow_ai
 ```
 
 Restart Claude Code afterward. For Cowork updates and automatic update settings, see the [marketplace upgrade guide](../README.md#upgrading).
+
+## Validation
+
+```bash
+python3 scripts/validate_publishing.py
+```
+
+Asserts the Claude Code, Codex, and Gemini manifests agree on name and version,
+that the Gemini extension's inlined MCP servers match `.mcp.json`, that every
+skill loads with a frontmatter name matching its directory, and that both
+marketplace manifests list this plugin at the right path. Nothing cross-checks
+these at install time, so a bump applied to one manifest and not the others
+ships silently broken.
 
 ## What It Does
 

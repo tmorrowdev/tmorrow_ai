@@ -1,0 +1,24 @@
+{
+  "name": "cre8-data",
+  "version": "2.0.0",
+  "description": "SQL, dataset exploration, visualization, dashboards, and Clerk machine authentication for auth-gated data sources.",
+  "mcpServers": {
+    "snowflake": {
+      "type": "http",
+      "url": "https://app.snowflake.com/mcp"
+    },
+    "amplitude": {
+      "type": "http",
+      "url": "https://mcp.amplitude.com/mcp"
+    },
+    "atlassian": {
+      "type": "http",
+      "url": "https://mcp.atlassian.com/v1/mcp"
+    },
+    "clerk": {
+      "type": "http",
+      "url": "https://mcp.clerk.com/mcp"
+    }
+  },
+  "contextFileName": "GEMINI.md"
+}
