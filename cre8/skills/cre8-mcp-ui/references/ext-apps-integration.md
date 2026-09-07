@@ -47,5 +47,6 @@ Check these for version-specific APIs and current host instructions:
 - [ChatGPT UI contract](https://developers.openai.com/apps-sdk/build/chatgpt-ui)
 - [ChatGPT connection and testing](https://developers.openai.com/apps-sdk/deploy/connect-chatgpt)
 
-For workflow handoffs use the sibling `cre8-mcp-app-workflow` skill. The
+For staged handoffs run the `cre8:theme-build-mcp-app` workflow in Claude Code, or
+coordinate the `agents/` specialists directly elsewhere. The
 cre8-mcp-render-debugger agent owns the host-by-host verification report.

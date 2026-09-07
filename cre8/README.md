@@ -87,8 +87,10 @@ MIT
 
 ## Branded MCP Apps agent workflow
 
-Ask: “Use cre8-mcp-app-workflow to build an MCP App for Claude Desktop and
-ChatGPT using this brand guide.” You can also request any specialist directly.
+Ask: “Build an MCP App for Claude Desktop and ChatGPT using this brand guide.”
+In Claude Code this runs as the `cre8:theme-build-mcp-app` workflow; on other
+hosts the main session coordinates the same specialists in the same order. You
+can also request any specialist directly.
 
 | Agent | Responsibility | Handoff |
 | --- | --- | --- |
@@ -104,14 +106,19 @@ from local harness/browser results.
 
 ### Claude Code
 
-The plugin automatically discovers `agents/*.md` and `skills/*/SKILL.md`.
-Invoke `/cre8:cre8-mcp-app-workflow` or ask Claude to use the workflow by name.
-For local development, from this directory: `claude --plugin-dir .`.
+The plugin automatically discovers `agents/*.md`, `skills/*/SKILL.md`, and
+`workflows/*.js`. Ask Claude to run the `cre8:theme-build-mcp-app` workflow by
+name; workflows require an explicit opt-in, so a bare feature request will not
+start one on its own. It accepts optional `args`: `project`, `brandSource`,
+`hosts`, `artifactDir`, `entry` (`theme` | `integrate` | `debug`), `baseTheme`,
+`maxFixRounds`, and `hint`. For local development, from this directory:
+`claude --plugin-dir .`.
 
 ### Codex
 
 The `.codex-plugin/plugin.json` manifest exposes the shared skills and MCP server.
-Invoke `$cre8-mcp-app-workflow`. Named custom agent definitions are bundled in
+Codex does not run Claude Code workflows, so ask the main session to coordinate
+the three specialists in order. Named custom agent definitions are bundled in
 `codex/agents/`; these are project agents, not an undocumented plugin manifest field.
 From this plugin directory, preview and install them into your app project:
 
@@ -124,8 +131,8 @@ Requires Python 3.11+. Existing differing agent files are reported as conflicts
 before any writes. The installer leaves other project settings intact and binds
 skill paths to this plugin directory. Keep that directory available; if it moves,
 review the installed definitions and reinstall. Start a new Codex session in the
-app project to discover the named agents. Without registration, the workflow can
-still dispatch workers with the same specialist prompts when delegation is enabled.
+app project to discover the named agents. Without registration, the main session
+can still dispatch workers with the same specialist prompts when delegation is enabled.
 
 ### Gemini CLI
 
@@ -136,9 +143,10 @@ same skills, Markdown agents, and MCP server. From this directory:
 gemini extensions link .
 ```
 
-Start a fresh Gemini CLI session and request `cre8-mcp-app-workflow`. Agent support
-is a preview feature; it must be enabled in the installed CLI. If disabled, the
-workflow reports that it is executing stages without isolated subagents.
+Start a fresh Gemini CLI session and ask it to build a branded MCP App; `GEMINI.md`
+directs the session through the same three stages. Agent support is a preview
+feature; it must be enabled in the installed CLI. If disabled, the main session
+reports that it is executing stages without isolated subagents.
 
 ### Validation
 
