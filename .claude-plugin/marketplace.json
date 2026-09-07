@@ -1,11 +1,12 @@
 {
   "name": "tmorrow_ai",
   "owner": { "name": "Tyler Morrow" },
+  "description": "Design system intelligence and data analysis plugins for Claude Cowork, Claude Code, Codex, and Gemini CLI.",
   "plugins": [
     {
-      "name": "data",
-      "source": "./data",
-      "description": "Write SQL, explore datasets, and build data pipelines with AI assistance."
+      "name": "cre8-data",
+      "source": "./cre8-data",
+      "description": "Write SQL, explore datasets, and build data pipelines with AI assistance. Includes Clerk machine authentication for reaching auth-gated data sources."
     },
     {
       "name": "cre8",
