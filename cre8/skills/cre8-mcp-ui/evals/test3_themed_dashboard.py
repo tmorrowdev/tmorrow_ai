@@ -1,7 +1,7 @@
 """
 metrics-server — themed cre8-wc dashboard.
 
-Two stat cards side-by-side with Innovexa brand tokens
+Two stat cards side-by-side with CRE8 brand tokens
 (primary #001d8e, accent #03bbb9).
 
 Run:
@@ -18,7 +18,7 @@ mcp = FastMCP("metrics-server")
 
 
 # Brand tokens — override cre8-wc CSS custom properties with the
-# Innovexa palette. Define once at module scope so every tool reuses it.
+#  palette. Define once at module scope so every tool reuses it.
 BRAND_TOKENS = """
 :root {
   --cre8-color-primary: #001d8e;

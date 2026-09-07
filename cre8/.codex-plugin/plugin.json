@@ -1,6 +1,6 @@
 {
   "name": "cre8",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "CRE8 component intelligence, brand theming, and specialist agents orchestrating MCP Apps integration and rendering verification for Claude Desktop and ChatGPT.",
   "author": {
     "name": "Tyler Morrow"
@@ -21,7 +21,7 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Cre8",
-    "shortDescription": "Generative UI toolkit for the Cre8/Innovexa design system",
+    "shortDescription": "Generative UI toolkit for the Cre8 design system",
     "longDescription": "Shared CRE8 skills and MCP tools with a workflow coordinating brand extraction, MCP Apps integration, and per-host rendering debugging. Includes project-installable Codex specialist agents.",
     "developerName": "Tyler Morrow",
     "category": "Productivity",

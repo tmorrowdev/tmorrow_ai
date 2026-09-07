@@ -40,7 +40,7 @@ This skill **composes with** `cre8-a2ui`, which knows how to express UIs as cre8
 - "Add a postMessage callback to this cre8 form"
 - "Show a chart / graph / data visualization in an MCP tool"
 
-If the request involves both a Python MCP server (FastMCP, `mcp-ui-server`, `ui://`) and cre8-wc / CRE8 / Innovexa components, this is the skill — even if the user didn't name it.
+If the request involves both a Python MCP server (FastMCP, `mcp-ui-server`, `ui://`) and cre8-wc / CRE8 /  components, this is the skill — even if the user didn't name it.
 
 ---
 

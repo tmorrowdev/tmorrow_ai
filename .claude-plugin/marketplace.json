@@ -11,7 +11,7 @@
     {
       "name": "cre8",
       "source": "./cre8",
-      "description": "Design system intelligence for @tmorrow/cre8-wc and @tmorrow/cre8-react. Generates A2UI schemas, React components, and FastMCP UI servers using the Innovexa/CRE8 component library."
+      "description": "Design system intelligence for @tmorrow/cre8-wc and @tmorrow/cre8-react. Generates A2UI schemas, React components, and FastMCP UI servers using the /CRE8 component library."
     }
   ]
 }

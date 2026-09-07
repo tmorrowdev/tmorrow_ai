@@ -1,6 +1,6 @@
 ---
 name: cre8-theming
-description: Extract a brand's colors, type and shape from a website, a docs site, a Design.md / brand-guide file, or a picture (logo, screenshot, mockup) and turn it into a cre8 seed-token override. Use when asked to theme, rebrand, or "match our brand" for a CRE8/Innovexa (@tmorrow/cre8-wc or @tmorrow/cre8-react) build, or when given a URL, an image, or a brand doc and asked to make a cre8 app look like it. Complements cre8-a2ui / cre8-a2ui-react, which cover component usage, not brand extraction.
+description: Extract a brand's colors, type and shape from a website, a docs site, a Design.md / brand-guide file, or a picture (logo, screenshot, mockup) and turn it into a cre8 seed-token override. Use when asked to theme, rebrand, or "match our brand" for a CRE8 (@tmorrow/cre8-wc or @tmorrow/cre8-react) build, or when given a URL, an image, or a brand doc and asked to make a cre8 app look like it. Complements cre8-a2ui / cre8-a2ui-react, which cover component usage, not brand extraction.
 ---
 
 # CRE8 theming — brand extraction

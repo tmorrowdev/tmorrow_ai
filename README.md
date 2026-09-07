@@ -7,7 +7,7 @@ Plugin marketplace for Claude Cowork, Claude Code, and Codex, with Gemini CLI ex
 | Plugin | Description |
 |--------|-------------|
 | **[cre8-data](./cre8-data)** | Write SQL, explore datasets, and generate insights faster. Build visualizations and dashboards, and turn raw data into clear stories for stakeholders. Includes Clerk machine authentication for auth-gated sources. |
-| **[cre8](./cre8)** | Design system intelligence for the Cre8 / Innovexa component library. MCP tools for component lookup, code generation, and serving cre8-wc UIs through Python MCP servers. |
+| **[cre8](./cre8)** | Design system intelligence for the Cre8 /  component library. MCP tools for component lookup, code generation, and serving cre8-wc UIs through Python MCP servers. |
 
 Both plugins ship for Cowork, Claude Code, Codex, and Gemini CLI. `cre8` additionally bundles specialist agents and a workflow; those are Claude Code and Codex features, so Gemini CLI loads its skills and MCP servers only.
 

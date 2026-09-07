@@ -1,6 +1,6 @@
 ---
 name: cre8-a2ui-react
-description: Agent-to-UI schema for CRE8 React Components (@tmorrow/cre8-react). Use when building React UIs with CRE8/Innovexa design system, generating React pages or applications using Cre8* components, creating landing pages, dashboards, forms, or any React UI with the CRE8 component library. Triggers on requests mentioning CRE8 React, @tmorrow/cre8-react, Innovexa React components, or building React UI with the CRE8 design system. Provides 72 React components with props, patterns, and usage examples.
+description: Agent-to-UI schema for CRE8 React Components (@tmorrow/cre8-react). Use when building React UIs with CRE8 design system, generating React pages or applications using Cre8* components, creating landing pages, dashboards, forms, or any React UI with the CRE8 component library. Triggers on requests mentioning CRE8 React, @tmorrow/cre8-react,  React components, or building React UI with the CRE8 design system. Provides 72 React components with props, patterns, and usage examples.
 ---
 
 # CRE8 A2UI React — Agent-to-UI Schema

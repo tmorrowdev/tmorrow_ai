@@ -1,6 +1,6 @@
 ---
 name: cre8-a2ui
-description: Agent-to-UI schema for CRE8 Web Components (@tmorrow/cre8-wc). Use when building vanilla JS/HTML UIs with CRE8/Innovexa design system using cre8-* custom elements, creating static landing pages, or integrating with non-React frameworks. Triggers on requests mentioning CRE8 web components, cre8-wc, cre8-* elements, Lit components, or vanilla HTML with CRE8 design system. For React projects, use cre8-a2ui-react instead.
+description: Agent-to-UI schema for CRE8 Web Components (@tmorrow/cre8-wc). Use when building vanilla JS/HTML UIs with CRE8 design system using cre8-* custom elements, creating static landing pages, or integrating with non-React frameworks. Triggers on requests mentioning CRE8 web components, cre8-wc, cre8-* elements, Lit components, or vanilla HTML with CRE8 design system. For React projects, use cre8-a2ui-react instead.
 ---
 
 # CRE8 A2UI — Web Components Schema
