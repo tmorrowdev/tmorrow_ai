@@ -22,7 +22,7 @@
   "interface": {
     "displayName": "Cre8",
     "shortDescription": "Generative UI toolkit for the Cre8/Innovexa design system",
-    "longDescription": "Shared CRE8 skills and MCP tools with specialist agents coordinating brand extraction, MCP Apps integration, and per-host rendering debugging. Includes project-installable Codex specialist agents.",
+    "longDescription": "Shared CRE8 skills and MCP tools with a workflow coordinating brand extraction, MCP Apps integration, and per-host rendering debugging. Includes project-installable Codex specialist agents.",
     "developerName": "Tyler Morrow",
     "category": "Productivity",
     "capabilities": [
@@ -33,7 +33,7 @@
       "Build a settings page with the Cre8 components.",
       "Theme this app to match our brand.",
       "Show me the Cre8 component for a data table.",
-      "Use the cre8 specialist agents to build a branded MCP App for Claude Desktop and ChatGPT."
+      "Use cre8-mcp-app-workflow to build a branded MCP App for Claude Desktop and ChatGPT."
     ],
     "websiteURL": "https://cre8-ui.dev",
     "brandColor": "#4F46E5"

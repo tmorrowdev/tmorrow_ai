@@ -10,9 +10,8 @@ description: Build CRE8 embedded UIs for MCP Apps / ext-apps in Claude Desktop a
 For **MCP Apps / ext-apps, Claude Desktop, or ChatGPT**, read
 [references/ext-apps-integration.md](references/ext-apps-integration.md) and follow
 that path instead of the legacy bridge instructions below. For a complete branded
-integration, run the `cre8:theme-build-mcp-app` workflow in Claude Code, or
-coordinate the `agents/` specialists directly on hosts without workflow support,
-to sequence theming, building, and rendering verification.
+integration, use the sibling `cre8-mcp-app-workflow` skill to coordinate theming,
+building, and rendering verification.
 
 The instructions, Python helper, and page shell below target **legacy mcp-ui**.
 Keep using them for hosts explicitly implementing that protocol. They do not
