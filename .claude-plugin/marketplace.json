@@ -3,9 +3,9 @@
   "owner": { "name": "Tyler Morrow" },
   "plugins": [
     {
-      "name": "data",
-      "source": "./data",
-      "description": "Write SQL, explore datasets, and build data pipelines with AI assistance."
+      "name": "cre8-data",
+      "source": "./cre8-data",
+      "description": "Write SQL, explore datasets, and build data pipelines with AI assistance. Includes Clerk machine authentication for reaching auth-gated data sources."
     },
     {
       "name": "cre8",

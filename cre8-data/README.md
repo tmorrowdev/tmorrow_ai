@@ -1,12 +1,12 @@
-# Data Analyst Plugin
+# Cre8 Data Plugin
 
-A data analyst plugin primarily designed for [Cowork](https://claude.com/product/cowork), Anthropic's agentic desktop application — though it also works in Claude Code. SQL queries, data exploration, visualization, dashboards, and insight generation. Configured for Snowflake, Amazon SageMaker, Amplitude, and Jira.
+A data analyst plugin primarily designed for [Cowork](https://claude.com/product/cowork), Anthropic's agentic desktop application — though it also works in Claude Code. SQL queries, data exploration, visualization, dashboards, and insight generation. Configured for Snowflake, Amazon SageMaker, Amplitude, Jira, and Clerk.
 
 ## Installation
 
 ```bash
 claude plugin marketplace add tmorrowdev/tmorrow_ai
-claude plugin install data@tmorrow_ai
+claude plugin install cre8-data@tmorrow_ai
 ```
 
 For Cowork installation, see the [marketplace installation guide](../README.md#cowork). This plugin is currently packaged for Cowork and Claude Code only.
@@ -15,7 +15,7 @@ For Cowork installation, see the [marketplace installation guide](../README.md#c
 
 ```bash
 claude plugin marketplace update tmorrow_ai
-claude plugin update data@tmorrow_ai
+claude plugin update cre8-data@tmorrow_ai
 ```
 
 Restart Claude Code afterward. For Cowork updates and automatic update settings, see the [marketplace upgrade guide](../README.md#upgrading).
@@ -63,6 +63,7 @@ Without a Snowflake connection, paste SQL results or upload CSV/Excel files for 
 | `data-validation` | Pre-delivery QA, sanity checks, and documentation standards |
 | `interactive-dashboard-builder` | HTML/JS dashboard construction with Chart.js, filters, and styling |
 | `api-data-contracts` | Generate typed data contracts from your OpenAPI spec for the UI agent — without Claude seeing real data |
+| `auth-gated-data-sources` | Authenticate an agent to a credentialed data source with Clerk machine auth — M2M tokens, API keys, or OAuth |
 
 ## Example Workflows
 

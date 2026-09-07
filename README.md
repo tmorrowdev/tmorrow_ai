@@ -6,16 +6,16 @@ Plugin marketplace for Claude Cowork, Claude Code, and Codex, with a Gemini CLI 
 
 | Plugin | Description |
 |--------|-------------|
-| **[data](./data)** | Write SQL, explore datasets, and generate insights faster. Build visualizations and dashboards, and turn raw data into clear stories for stakeholders. |
+| **[cre8-data](./cre8-data)** | Write SQL, explore datasets, and generate insights faster. Build visualizations and dashboards, and turn raw data into clear stories for stakeholders. Includes Clerk machine authentication for auth-gated sources. |
 | **[cre8](./cre8)** | Design system intelligence for the Cre8 / Innovexa component library. MCP tools for component lookup, code generation, and serving cre8-wc UIs through Python MCP servers. |
 
-`data` is packaged for Cowork and Claude Code. `cre8` also includes a Codex plugin manifest and a Gemini CLI extension manifest.
+`cre8-data` is packaged for Cowork and Claude Code. `cre8` also includes a Codex plugin manifest and a Gemini CLI extension manifest.
 
 ## Installation
 
 ### Cowork
 
-Open **Customize → Plugins → Add marketplace**, enter `https://github.com/tmorrowdev/tmorrow_ai`, then install `data` or `cre8`. See the [Cowork plugin guide](https://claude.com/docs/cowork/guide/plugins).
+Open **Customize → Plugins → Add marketplace**, enter `https://github.com/tmorrowdev/tmorrow_ai`, then install `cre8-data` or `cre8`. See the [Cowork plugin guide](https://claude.com/docs/cowork/guide/plugins).
 
 ### Claude Code
 
@@ -24,7 +24,7 @@ Open **Customize → Plugins → Add marketplace**, enter `https://github.com/tm
 claude plugin marketplace add tmorrowdev/tmorrow_ai
 
 # Install a plugin
-claude plugin install data@tmorrow_ai
+claude plugin install cre8-data@tmorrow_ai
 claude plugin install cre8@tmorrow_ai
 ```
 
@@ -64,7 +64,7 @@ Refresh the marketplace, then update each plugin you have installed:
 
 ```bash
 claude plugin marketplace update tmorrow_ai
-claude plugin update data@tmorrow_ai
+claude plugin update cre8-data@tmorrow_ai
 claude plugin update cre8@tmorrow_ai
 ```
 
