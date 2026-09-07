@@ -1,5 +1,5 @@
 export const meta = {
-  name: 'theme-build-mcp-app',
+  name: 'workflow-themed-mcp-app',
   description: 'Theme, build, and verify a branded CRE8 MCP App across Claude Desktop and ChatGPT.',
   whenToUse:
     'Use for an end-to-end branded CRE8 MCP App: brand extraction, ext-apps integration, and per-host rendering verification. Also use to re-verify or repair an existing app by entering at the integrate or debug stage.',

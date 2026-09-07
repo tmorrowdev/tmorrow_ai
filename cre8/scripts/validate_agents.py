@@ -35,7 +35,23 @@ def validate():
         for target in re.findall(r"\]\(([^)]+)\)", source.read_text()):
             if "://" not in target and not target.startswith("#"):
                 assert (source.parent / target.split("#")[0]).exists(), target
-    print("Validated 3 shared agents, 3 Codex definitions, and all distribution entry points.")
+    validate_workflows()
+    print("Validated 3 shared agents, 3 Codex definitions, 1 workflow, and all distribution entry points.")
+
+
+def validate_workflows():
+    """Claude Code loads workflows/*.js non-recursively and silently skips any
+    script missing its leading `export const meta` literal, so check both here."""
+    directory = ROOT / "workflows"
+    scripts = sorted(directory.glob("*.js"))
+    assert scripts, "no workflow scripts found"
+    for stray in directory.iterdir():
+        assert not stray.is_dir(), f"{stray.name}: subdirectories are never loaded"
+    for script in scripts:
+        text = script.read_text()
+        assert text.startswith("export const meta = {"), script.name
+        name = re.search(r"^\s*name: '([^']+)'", text, re.M)
+        assert name and name.group(1) == script.stem, f"{script.name}: meta.name must match the filename"
 
 
 if __name__ == "__main__":
